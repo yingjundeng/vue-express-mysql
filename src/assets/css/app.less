@@ -1,0 +1,234 @@
+@import "./variables";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+#app {
+  position: relative;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+.page {
+  background-color: #fff;
+  min-height: calc(100vh - 260px);
+}
+
+.page2 {
+  background-color: #fff;
+  min-height: calc(10vh - 10px);
+  margin-bottom: 20px;
+}
+
+.page3 {
+  background-color: #fff;
+  min-height: calc(1vh - 30px);
+  margin-bottom: 20px;
+}
+
+
+.active-color {
+  color: @active-color;
+}
+
+
+.my-dialog-footer {
+  padding-top: 30px;
+}
+
+
+.tag-item {
+  margin: 0 10px;
+
+  .el-checkbox-button__inner {
+    border-radius: 20px !important;
+  }
+}
+
+/**
+搜索
+ */
+.filter-panel {
+  .el-form-item {
+    margin-bottom: 0;
+
+    &__label {
+      font-size: 14px;
+    }
+  }
+}
+
+.can-edit {
+  a {
+    text-decoration: none;
+  }
+
+  .col-edit {
+    position: absolute;
+    display: none;
+    top: 0;
+    height: 100%;
+    right: 0;
+    width: 24px;
+    line-height: 100%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .el-icon-edit {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 4px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  &:hover {
+    .col-edit {
+      display: block;
+    }
+  }
+}
+
+
+.sort-item {
+  position: relative;
+  margin-top: 5px;
+  overflow: hidden;
+  padding: 5px 5px 5px 0;
+  cursor: move;
+
+  &:before {
+    font-family: "iconfont" !important;
+    font-size: 14px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    content: "\e708";
+  }
+
+  i {
+    font-size: 14px;
+    color: #ccc;
+    margin-right: 6px;
+
+    &.el-icon-close {
+      color: #333;
+      float: right;
+    }
+  }
+
+  &:hover {
+    background-color: fade(@active-color, 10%);
+  }
+
+  &:first-child {
+    margin-top: 10px;
+  }
+}
+
+//重写popper
+.cate-popper {
+  padding: 0 !important;
+
+  .el-popover__title {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: #272727;
+    font-weight: 700;
+  }
+
+  .el-divider--horizontal {
+    margin: 0;
+  }
+
+  .item {
+    padding: 10px 0 15px 20px;
+    margin-bottom: 0;
+
+    input {
+      width: 100%
+    }
+  }
+
+  .btn-wrapper {
+    padding: 14px 20px;
+  }
+
+  .sub-btn {
+    //margin: 20px 20px 20px 20px;
+    display: block;
+    width: 100%;
+
+  }
+}
+
+.kanban-content {
+  .el-checkbox {
+
+
+  }
+
+  .task-item {
+    .el-card__body {
+      padding: 15px;
+      display: flex;
+    }
+
+    .el-checkbox {
+      width: 22px;
+      position: relative;
+      top: 2px;
+
+      &.is-checked {
+        .el-checkbox__inner {
+          background-color: #cccccc;
+          border-color: #cccccc;
+        }
+
+        & + .task-name {
+          color: #cccccc;
+        }
+      }
+    }
+  }
+
+}
+
+
+.task-detail-title {
+  line-height: 44px !important;
+  font-size: 16px !important;
+
+  .el-breadcrumb__inner {
+    color: #333 !important;
+
+  }
+}
+
+.notitle-dialog{
+  .el-dialog__header{
+    display: none;
+  }
+  .el-dialog__body{
+    padding: 0;
+  }
+}
